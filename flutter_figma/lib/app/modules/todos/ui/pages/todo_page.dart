@@ -48,48 +48,52 @@ class _TodoPageState extends State<TodoPage> {
                     ),
                   );
                 case TodoStateSucess todosSuccess:
-                  return Stack(
-                    children: [
-                      Padding(
-                          key: const ValueKey('success'),
-                          padding: const EdgeInsets.symmetric(horizontal: 25),
-                          child: CustomScrollView(
-                            slivers: [
-                              SliverPadding(
-                                padding: const EdgeInsets.only(
-                                    left: 60 - 25, top: 16, bottom: 20),
-                                sliver: SliverToBoxAdapter(
-                                  child: SizedBox(
-                                    child: TextWidget.title('Today'),
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 28.0),
+                    child: Stack(
+                      alignment: Alignment.bottomCenter,
+                      children: [
+                        Padding(
+                            key: const ValueKey('success'),
+                            padding: const EdgeInsets.symmetric(horizontal: 25),
+                            child: CustomScrollView(
+                              slivers: [
+                                SliverPadding(
+                                  padding: const EdgeInsets.only(
+                                      left: 60 - 25, top: 16, bottom: 20),
+                                  sliver: SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      child: TextWidget.title('Today'),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              SliverList.builder(
-                                itemCount: todosSuccess.todos.length,
-                                itemBuilder: (context, index) {
-                                  final todo = todosSuccess.todos[index];
-                                  return Padding(
-                                    padding:
-                                        const EdgeInsets.only(bottom: 32.0),
-                                    child: TodoTileWidget(
-                                      title: todo.title,
-                                      onTap: () =>
-                                          widget.todoController.removeTodo(
-                                        todosSuccess.todos,
-                                        index,
+                                SliverList.builder(
+                                  itemCount: todosSuccess.todos.length,
+                                  itemBuilder: (context, index) {
+                                    final todo = todosSuccess.todos[index];
+                                    return Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 32.0),
+                                      child: TodoTileWidget(
+                                        title: todo.title,
+                                        onTap: () =>
+                                            widget.todoController.removeTodo(
+                                          todosSuccess.todos,
+                                          index,
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                },
-                              )
-                            ],
-                          )),
-                      AddTodoWidget(
-                        onTap: () {
-                          widget.todoController.addTodo(todosSuccess.todos);
-                        },
-                      ),
-                    ],
+                                    );
+                                  },
+                                )
+                              ],
+                            )),
+                        AddTodoWidget(
+                          onTap: () {
+                            widget.todoController.addTodo(todosSuccess.todos);
+                          },
+                        ),
+                      ],
+                    ),
                   );
                 case TodoStateFailure _:
                   return Container(key: const ValueKey('failure'));

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_figma/app/modules/todos/ui/widgets/add_todo_figma_mock.dart';
 
 class AddTodoWidget extends StatefulWidget {
   final void Function() onTap;
@@ -16,13 +17,7 @@ class _AddTodoWidgetState extends State<AddTodoWidget> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: widget.onTap,
-      child: Container(
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
-        child: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Icon(Icons.add),
-        ),
-      ),
+      child: const AddTodoFigmaMock(),
     );
   }
 }
