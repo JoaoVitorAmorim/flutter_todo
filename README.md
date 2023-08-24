@@ -1,4 +1,4 @@
-# ToDo GitHub App Readme 📝
+# ToDo  📝
 
 This repository contains a ToDo GitHub app developed using Flutter as a proof of concept. The app generates random "lorem ipsum" based todos to demonstrate its functionality. The "Add Todo" button code was even generated using a Figma plugin, showcasing the seamless integration between design and development. To run the app on your local machine, follow the steps below. ✅📌
 
