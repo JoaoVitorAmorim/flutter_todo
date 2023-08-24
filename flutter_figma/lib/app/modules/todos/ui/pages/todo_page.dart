@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_figma/app/core/widgets/text_widget.dart';
 import 'package:flutter_figma/app/modules/todos/controller/todo_controller.dart';
-import 'package:flutter_figma/app/modules/todos/interactor/model/todo_model.dart';
 import 'package:flutter_figma/app/modules/todos/interactor/state/todo_state.dart';
 import 'package:flutter_figma/app/modules/todos/ui/widgets/add_todo_widget.dart';
 import 'package:flutter_figma/app/modules/todos/ui/widgets/todo_tile_widget.dart';
